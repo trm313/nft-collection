@@ -4,10 +4,18 @@ import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 import NftItem from './NftItem';
 
 const NftGallery = ({ account, nfts = [] }) => {
+	if (!account) {
+		return (
+			<div className="flex">
+				<p>To mint an NFT or view your assets, connect your wallet via MetaMask</p>
+			</div>
+		)
+	}
+
 	return (
 		<div className="flex flex-col mt-12 px-8">
-			<div className="flex items-center justify-between">
-				<h2 className="text-4xl">My NFT Collection</h2>
+			<div className="flex items-center justify-between mb-8">
+				<h2 className="text-xl md:text-4xl">My NFT Collection</h2>
 				<a 
 					className="btn my-1"
 					target="__blank" 

@@ -12,7 +12,7 @@ import './styles/misc.css';
 
 // Components
 import Banner from './components/Banner';
-import Button from './components/Button';
+import MintButton from './components/MintButton';
 import Cover from './components/Cover';
 import NftGallery from './components/NftGallery';
 import MintConfirmation from './components/MintConfirmation';
@@ -158,17 +158,16 @@ function App() {
 	const renderNotConnectedContainer = () => (
 		<button
 			onClick={connectWallet} 
-			className="">
+			className="btn-primary">
 			Connect to Wallet
 		</button>
 	)
 
 	const renderMintUI = () => (
-		<Button 
+		<MintButton 
 			onClick={askContractToMintNft}
 			disabled={isMintingInProgress}
 			isLoading={isMintingInProgress}
-			className="bg-pink-400"
 			text="Mint New NFT"
 			loadingText="Minting NFT..."
 		/>
@@ -186,9 +185,9 @@ function App() {
 	}, [currentAccount, mintedNFTs])
 
   return (
-    <div className="w-100 min-h-screen flex flex-col items-center bg-blue-900 text-stone-300">
+    <div className="w-100 min-h-screen flex flex-col items-center text-stone-800">
 				<Banner />
-				<div className="max-w-7xl flex flex-col px-8">
+				<div className="max-w-7xl flex flex-col px-8 items-center">
 					<Cover />
 
 					<div className="flex items-center justify-center">
