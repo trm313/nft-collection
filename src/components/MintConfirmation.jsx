@@ -6,7 +6,7 @@ const MintConfirmation = ({ data, viewUrl }) => {
 			<p className="text-lg">Your NFT has minted!</p>
 			<p><strong>Address:</strong> {data.address}</p>
 			<p><strong>Token ID:</strong> {data.tokenId.toNumber()}</p>
-			<a className="btn bg-purple-400" target="__blank" href={viewUrl}>View on Rarible</a>
+			<a className="btn" target="__blank" href={viewUrl}>View on Rarible</a>
 		</div>
 	)
 }
